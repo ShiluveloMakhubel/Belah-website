@@ -1,0 +1,70 @@
+/* Header Styles */
+.header {
+  background-color: #f8f9fa;
+  padding: 10px 20px;
+  border-bottom: 2px solid #ddd;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between; /* Space between the logo and navigation */
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Logo Section */
+.logo {
+  flex: 0 0 auto; /* Prevent the logo from stretching */
+}
+
+.logo .logo-image {
+  height: 50px;
+  width: auto;
+}
+
+/* Navigation Menu */
+.nav {
+  flex: 1; /* Take up remaining space */
+  display: flex;
+  justify-content: flex-end; /* Align navigation items to the far right */
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  margin: 0 15px;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-size: 16px;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #007bff;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    margin-top: 10px;
+  }
+
+  .nav-item {
+    margin: 10px 0;
+  }
+}

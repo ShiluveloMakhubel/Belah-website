@@ -36,3 +36,35 @@
     transform: rotate(360deg);
   }
 }
+.home {
+  text-align: center;
+}
+
+.promotional-banner img {
+  width: 100%;
+  height: auto;
+}
+
+.categories, .featured-products {
+  margin: 20px 0;
+}
+
+.category-list, .product-list {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.category-item, .product-item {
+  width: 200px;
+  margin: 10px;
+}
+
+.category-item img, .product-item img {
+  width: 100%;
+  height: auto;
+}
+
+.category-item h3, .product-item h3 {
+  margin: 10px 0;
+}
