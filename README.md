@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+# 💁🏽‍♀️ Belah Website — Style Meets Tech 💻✨
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Status](https://img.shields.io/badge/status-in%20progress-yellow)  
+![Built With](https://img.shields.io/badge/built%20with-ReactJS-purple?logo=react)
 
-## Available Scripts
+Welcome to the **Belah** web experience — an online shopping platform where beauty, fashion, and tech accessories meet effortless style. This modern React.js application is built to showcase and sell products such as **hair weaves**, **phones**, **sneakers**, **watches**, **clothes**, and more.
 
-In the project directory, you can run:
+> 🛍️ Whether you’re buying your next phone or rocking that new weave — Belah is your go-to online store. (Coming soon to mobile too!)
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🖥️ Tech Stack
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+| Category        | Tools / Libraries                                   |
+|----------------|------------------------------------------------------|
+| **Frontend**    | React.js, CSS3, React Router                        |
+| **Styling**     | Tailwind CSS (some parts) or custom CSS modules     |
+| **State Mgmt**  | useState, useEffect (React Hooks)                  |
+| **Routing**     | react-router-dom                                    |
+| **Backend**     | Coming Soon ( .NET)            |
+| **Database**    | Coming Soon (SQL Server)                 |
+| **Hosting**     | To be decided (Netlify / Vercel / Azure / Firebase)|
+| **Icons & Fonts** | Google Fonts, Heroicons, Custom assets            |
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 📸 Screenshots
 
-### `npm run build`
+> _Coming soon!_ Screenshots and demo video will be added once the major modules are done.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🚧 Current Progress
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- ✅ Login Page  
+- ✅ Signup Page  
+- ✅ Basic Routing Setup  
+- ✅ Home Page Layout  
+- ✅ Product Catalog  
+- ⏳ Cart System  
+- ⏳ Admin Panel  
+- ⏳ Checkout + Payment Integration
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 📦 Installation & Running Locally
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```bash
+git clone https://github.com/your-username/belah-website.git
+cd belah-website
+npm install
+npm start
