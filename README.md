@@ -84,8 +84,6 @@ cd belah-website
 npm install
 npm start
 
----
-
 
 
 
