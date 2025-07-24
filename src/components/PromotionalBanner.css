@@ -1,7 +1,8 @@
 .promotional-banner {
   text-align: center;
   padding: 20px;
-  background-color: #f9f9f9;
+  background: linear-gradient(to right, #fcd34d, #f9a8d4, #c084fc);
+  font-family: 'Segoe UI', sans-serif;
 }
 
 .promotional-banner img {

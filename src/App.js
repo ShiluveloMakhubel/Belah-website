@@ -9,6 +9,8 @@ import CartPage from './pages/CartPage';
 import ContactPage from './pages/ContactPage';
 import ProductDetails from './pages/ProductDetails';
 import PostProduct from './components/PostProduct';
+import LoginPage from './pages/LoginPage';
+import SignupPage from './pages/SignupPage';
 // Import other pages here as needed
 
 function App() {
@@ -24,7 +26,8 @@ function App() {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/product/:productId" element={<ProductDetails />} />
           <Route path="/postproduct" element={<PostProduct />} />
-         
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/signup" element={<SignupPage />} />
           {/* Add other routes here */}
         </Routes>
         <Footer />
