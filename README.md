@@ -1,7 +1,10 @@
 # 💁🏽‍♀️ Belah Website — Style Meets Tech 💻✨
 
-![Status](https://img.shields.io/badge/status-in%20progress-yellow)  
+![Status](https://img.shields.io/badge/status-in%20progress-yellow)
 ![Built With](https://img.shields.io/badge/built%20with-ReactJS-purple?logo=react)
+![C#](https://img.shields.io/badge/backend-C%23-239120?logo=c-sharp&logoColor=white&style=flat)
+![SQL](https://img.shields.io/badge/database-SQL%20Server-CC2927?logo=microsoftsqlserver&logoColor=white)
+
 
 Welcome to the **Belah** web experience — an online shopping platform where beauty, fashion, and tech accessories meet effortless style. This modern React.js application is built to showcase and sell products such as **hair weaves**, **phones**, **sneakers**, **watches**, **clothes**, and more.
 
@@ -42,6 +45,36 @@ Welcome to the **Belah** web experience — an online shopping platform where be
 - ⏳ Checkout + Payment Integration
 
 ---
+## Planned Features
+- 🔍 Product Search + Filters
+- 🛒 Shopping Cart & Checkout
+- 🧾 Order History
+- 📦 Product Management (Admin)
+- 🔐 Secure Login/Auth (JWT or Firebase)
+- 📱 Mobile-First Design
+
+## ✨ Cool Extras We Might Add
+- Light/Dark Theme Toggle 🌗
+- Live Chat with Support 💬
+- Rating + Review System ⭐
+- Smart Product Suggestions 🤖
+- Animations with Framer Motion 🎞️
+
+## 👨🏽‍💻 Author
+- Shiluvelo Makhubele
+- 📍 Pretoria, South Africa
+- 🚀 BSc Computer Science (Hons) | Software Engineer | Digital Forensics
+- 🔗 LinkedIn
+- 🐙 GitHub: @shiluvelomakhubel
+
+
+
+## 📅 Last Updated
+-  2025
+
+## 🧪 Status: 🚧 Still in Development
+- Stay tuned for more updates as we continue building the Belah shopping experience 🛍️🔥
+
 
 ## 📦 Installation & Running Locally
 
@@ -50,3 +83,11 @@ git clone https://github.com/your-username/belah-website.git
 cd belah-website
 npm install
 npm start
+
+---
+
+
+
+
+
+
