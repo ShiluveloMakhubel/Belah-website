@@ -17,8 +17,8 @@ Welcome to the **Belah** web experience — an online shopping platform where be
 | **Styling**     | Tailwind CSS (some parts) or custom CSS modules     |
 | **State Mgmt**  | useState, useEffect (React Hooks)                  |
 | **Routing**     | react-router-dom                                    |
-| **Backend**     | Coming Soon ( .NET)            |
-| **Database**    | Coming Soon (SQL Server)                 |
+| **Backend**     |  .NET            |
+| **Database**    | SQL Server                |
 | **Hosting**     | To be decided (Netlify / Vercel / Azure / Firebase)|
 | **Icons & Fonts** | Google Fonts, Heroicons, Custom assets            |
 
