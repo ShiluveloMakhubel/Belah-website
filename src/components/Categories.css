@@ -20,15 +20,18 @@
 }
 
 .category-card {
-  background-color: #ffffff;
+  background-color: #fff;
   border-radius: 16px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
   overflow: hidden;
-  transition: transform 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .category-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
 }
 
 .category-image {
@@ -44,11 +47,6 @@
 
 .category-info h3 {
   font-size: 1.1rem;
-  margin-bottom: 0.5rem;
+  font-weight: 500;
   color: #444;
-}
-
-.category-price {
-  font-size: 0.95rem;
-  color: #6b7280;
 }
