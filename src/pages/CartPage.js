@@ -1,42 +1,75 @@
-import React, { useState } from 'react';
-import './CartPage.css';
-
-const initialCart = [
-  { id: 1, name: '26" Frontal weave', price: 100, image: '/images/hair.jpeg' },
-  { id: 2, name: 'Iphone 11', price: 500, image: '/images/phone.jpeg' },
-  { id: 3, name: 'Zara Sandals', price: 80, image: '/images/shoe.jpeg' },
-];
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import './CartPage.css'; // Create custom styles if needed
 
 const CartPage = () => {
-  const [cart, setCart] = useState(initialCart);
+  const [cartItems, setCartItems] = useState([]);
+  const navigate = useNavigate();
 
-  const removeFromCart = (id) => {
-    setCart(cart.filter(product => product.id !== id));
+  useEffect(() => {
+    const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
+    setCartItems(storedCart);
+  }, []);
+
+  const updateCart = (items) => {
+    setCartItems(items);
+    localStorage.setItem('cart', JSON.stringify(items));
   };
 
-  const total = cart.reduce((acc, product) => acc + product.price, 0);
+  const handleIncrease = (id) => {
+    const updated = cartItems.map(item =>
+      item.id === id ? { ...item, quantity: item.quantity + 1 } : item
+    );
+    updateCart(updated);
+  };
+
+  const handleDecrease = (id) => {
+    const updated = cartItems.map(item =>
+      item.id === id ? { ...item, quantity: Math.max(item.quantity - 1, 1) } : item
+    );
+    updateCart(updated);
+  };
+
+  const handleRemove = (id) => {
+    const updated = cartItems.filter(item => item.id !== id);
+    updateCart(updated);
+  };
+
+  const totalPrice = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
   return (
-    <div className="cart-page">
-      <h2>Your Cart</h2>
-      {cart.length === 0 ? (
+    <div className="cart-container fade-in">
+      <h2>Your Shopping Cart</h2>
+
+      {cartItems.length === 0 ? (
         <p>Your cart is empty.</p>
       ) : (
-        <div>
-          <ul>
-            {cart.map(product => (
-              <li key={product.id} className="cart-item">
-                <img src={product.image} alt={product.name} />
-                <div className="cart-item-details">
-                  <h3>{product.name}</h3>
-                  <p>${product.price}</p>
-                  <button onClick={() => removeFromCart(product.id)}>Remove</button>
+        <>
+          <ul className="cart-list">
+            {cartItems.map(item => (
+              <li key={item.id} className="cart-item">
+                <img src={item.imageUrl} alt={item.name} className="cart-image" />
+                <div className="cart-details">
+                  <h3>{item.name}</h3>
+                  <p>ZAR {item.price} x {item.quantity}</p>
+                  <div className="cart-controls">
+                    <button onClick={() => handleDecrease(item.id)}>-</button>
+                    <span>{item.quantity}</span>
+                    <button onClick={() => handleIncrease(item.id)}>+</button>
+                    <button onClick={() => handleRemove(item.id)} className="remove-btn">Remove</button>
+                  </div>
                 </div>
               </li>
             ))}
           </ul>
-          <h3>Total: ${total}</h3>
-        </div>
+
+          <div className="cart-summary">
+            <h3>Total: ZAR {totalPrice.toFixed(2)}</h3>
+            <button className="checkout-btn" onClick={() => navigate('/checkout')}>
+              Proceed to Checkout
+            </button>
+          </div>
+        </>
       )}
     </div>
   );

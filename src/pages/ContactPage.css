@@ -1,60 +1,41 @@
-/* ContactPage.css */
-
-body {
-   background: linear-gradient(to right, #fcd34d, #f9a8d4, #c084fc);
-  margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.contact-page {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+.cart-container {
   padding: 20px;
 }
 
-.contact-container {
-  background-color: #ffffff;
-  padding: 30px;
-  border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-  max-width: 450px;
-  width: 100%;
+.cart-list {
+  list-style: none;
+  padding: 0;
 }
 
-.contact-container h2 {
-  text-align: center;
-  margin-bottom: 25px;
-  font-size: 28px;
-  color: #4a00e0;
-}
-
-.contact-details h3 {
-  font-size: 18px;
-  margin-top: 20px;
-  color: #555;
-}
-
-.contact-details p {
-  margin: 10px 0;
-}
-
-.contact-details a {
+.cart-item {
   display: flex;
   align-items: center;
-  text-decoration: none;
-  color: #333;
-  font-size: 16px;
-  transition: color 0.3s ease;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
 }
 
-.contact-details a:hover {
-  color: #8e2de2;
+.cart-image {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  margin-right: 15px;
 }
 
-.contact-icon {
-  margin-right: 10px;
-  font-size: 20px;
-  color: #4a00e0;
+.cart-info {
+  flex: 1;
+}
+
+.cart-summary {
+  margin-top: 20px;
+  font-size: 18px;
+  text-align: right;
+}
+
+.checkout-btn {
+  padding: 10px 20px;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  cursor: pointer;
 }

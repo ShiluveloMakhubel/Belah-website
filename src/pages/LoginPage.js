@@ -3,24 +3,49 @@ import './LoginPage.css';
 import { useNavigate } from 'react-router-dom';
 
 const LoginPage = () => {
-const navigate = useNavigate();
+  const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
-  const [formData, setFormData] = useState({ email: '', password: '' });
+  const [formData, setFormData] = useState({ username: '', password: '' });
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Login attempt', formData);
-    // Add authentication logic here
 
-     if (formData.email && formData.password) {
-      console.log('Login successful', formData);
-      navigate('/'); // Redirect to Home page
-    } else {
+    if (!formData.username || !formData.password) {
       alert('Please fill in all fields');
+      return;
+    }
+
+    try {
+      const response = await fetch('http://localhost:5000/api/User/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          username: formData.username,
+          password: formData.password,
+        }),
+      });
+
+      if (!response.ok) {
+        const error = await response.text();
+        throw new Error(error || 'Login failed');
+      }
+
+      const result = await response.json();
+      console.log('Login successful:', result);
+
+      // Save token or user info here if needed
+      // localStorage.setItem('token', result.token);
+
+      navigate('/'); // Redirect to homepage
+    } catch (error) {
+      console.error('Login error:', error.message);
+      alert('Login failed: ' + error.message);
     }
   };
 
@@ -32,14 +57,14 @@ const navigate = useNavigate();
 
         <form onSubmit={handleSubmit} className="login-form">
           <div className="input-group">
-            <label>Email</label>
+            <label>Username</label>
             <input
-              type="email"
-              name="email"
-              value={formData.email}
+              type="text"
+              name="username"
+              value={formData.username}
               onChange={handleChange}
               required
-              placeholder="you@example.com"
+              placeholder="your_username"
             />
           </div>
           <div className="input-group">
@@ -62,11 +87,11 @@ const navigate = useNavigate();
               </button>
             </div>
           </div>
-          <button type="submit" className="login-btn" >Sign In</button>
+          <button type="submit" className="login-btn">Sign In</button>
         </form>
 
         <p className="register-text">
-          Don’t have an account? <a href="signup">Register</a>
+          Don’t have an account? <a href="/signup">Register</a>
         </p>
       </div>
     </div>
