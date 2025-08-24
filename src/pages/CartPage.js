@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './CartPage.css'; // Create custom styles if needed
+import './CartPage.css';
 
 const CartPage = () => {
   const [cartItems, setCartItems] = useState([]);
@@ -16,22 +16,35 @@ const CartPage = () => {
     localStorage.setItem('cart', JSON.stringify(items));
   };
 
-  const handleIncrease = (id) => {
+  const handleIncrease = (id, color, storage) => {
     const updated = cartItems.map(item =>
-      item.id === id ? { ...item, quantity: item.quantity + 1 } : item
+      item.id === id &&
+      item.selectedColor === color &&
+      item.selectedStorage === storage
+        ? { ...item, quantity: item.quantity + 1 }
+        : item
     );
     updateCart(updated);
   };
 
-  const handleDecrease = (id) => {
+  const handleDecrease = (id, color, storage) => {
     const updated = cartItems.map(item =>
-      item.id === id ? { ...item, quantity: Math.max(item.quantity - 1, 1) } : item
+      item.id === id &&
+      item.selectedColor === color &&
+      item.selectedStorage === storage
+        ? { ...item, quantity: Math.max(item.quantity - 1, 1) }
+        : item
     );
     updateCart(updated);
   };
 
-  const handleRemove = (id) => {
-    const updated = cartItems.filter(item => item.id !== id);
+  const handleRemove = (id, color, storage) => {
+    const updated = cartItems.filter(
+      item =>
+        !(item.id === id &&
+          item.selectedColor === color &&
+          item.selectedStorage === storage)
+    );
     updateCart(updated);
   };
 
@@ -47,16 +60,54 @@ const CartPage = () => {
         <>
           <ul className="cart-list">
             {cartItems.map(item => (
-              <li key={item.id} className="cart-item">
+              <li
+                key={`${item.id}-${item.selectedColor}-${item.selectedStorage}`}
+                className="cart-item"
+              >
                 <img src={item.imageUrl} alt={item.name} className="cart-image" />
                 <div className="cart-details">
                   <h3>{item.name}</h3>
+
+                  {/* Color swatch */}
+                  {item.selectedColor && (
+                    <div className="cart-color">
+                      <strong>Color:</strong>
+                      <span
+                        className="color-swatch"
+                        style={{ backgroundColor: item.selectedColor.toLowerCase() }}
+                        title={item.selectedColor}
+                      ></span>
+                      {item.selectedColor}
+                    </div>
+                  )}
+
+                  {/* Storage */}
+                  {item.selectedStorage && (
+                    <p><strong>Storage:</strong> {item.selectedStorage}</p>
+                  )}
+
                   <p>ZAR {item.price} x {item.quantity}</p>
+
                   <div className="cart-controls">
-                    <button onClick={() => handleDecrease(item.id)}>-</button>
-                    <span>{item.quantity}</span>
-                    <button onClick={() => handleIncrease(item.id)}>+</button>
-                    <button onClick={() => handleRemove(item.id)} className="remove-btn">Remove</button>
+                    <button
+                      className="qty-btn"
+                      onClick={() => handleDecrease(item.id, item.selectedColor, item.selectedStorage)}
+                    >
+                      −
+                    </button>
+                    <span className="qty">{item.quantity}</span>
+                    <button
+                      className="qty-btn"
+                      onClick={() => handleIncrease(item.id, item.selectedColor, item.selectedStorage)}
+                    >
+                      +
+                    </button>
+                    <button
+                      onClick={() => handleRemove(item.id, item.selectedColor, item.selectedStorage)}
+                      className="remove-btn"
+                    >
+                      Remove
+                    </button>
                   </div>
                 </div>
               </li>

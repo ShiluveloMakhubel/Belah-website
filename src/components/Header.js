@@ -11,7 +11,7 @@ const Header = () => {
       <div className="header-container">
         <div className="logo">
           <Link to="/" onClick={() => setMenuOpen(false)}>
-            <img src="/images/logo2.png" alt="Belah Logo" className="logo-image" />
+            <img src="/images/logo2.ico" alt="Belah Logo" className="logo-image" />
           </Link>
         </div>
 

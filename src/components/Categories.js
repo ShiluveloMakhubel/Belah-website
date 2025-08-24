@@ -1,18 +1,18 @@
 import React from 'react';
 import './Categories.css';
-import Deals from './Deals';
+
 import { Link } from 'react-router-dom'; // for navigation
 
 const categoriesData = [
-  { id: 1, name: 'Hair Weave', image: '/images/hair.jpeg', slug: 'hair-weave' },
-  { id: 2, name: 'Smartphone', image: '/images/phone.jpeg', slug: 'smartphone' },
-  { id: 3, name: 'Shoes', image: '/images/shoe.jpeg', slug: 'shoes' },
+  { id: 1, name: 'Hair Weave', image: '/images/hair2.png', slug: 'hair-weave' },
+  { id: 2, name: 'Smartphone', image: '/images/iphone11.png', slug: 'smartphone' },
+  { id: 3, name: 'Shoes', image: '/images/sandals.jpg', slug: 'shoes' },
 ];
 
 const Categories = () => {
   return (
     <div className="categories-container">
-      <Deals />
+      
       <h2 className="categories-title">Shop by Category</h2>
       <div className="category-grid">
         {categoriesData.map((category) => (

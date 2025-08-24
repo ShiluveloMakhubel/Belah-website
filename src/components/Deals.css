@@ -11,7 +11,8 @@
 
 .deals-page {
   padding: 3rem 2rem;
-  background: linear-gradient(to right, #fcd34d, #f9a8d4, #c084fc);
+  /* background: linear-gradient(to right, #fcd34d, #f9a8d4, #c084fc);*/
+  background-color: aliceblues;
   min-height: 100vh;
   text-align: center;
   font-family: 'Poppins', sans-serif;
@@ -85,7 +86,8 @@
 }
 
 .shop-now {
-  background: linear-gradient(to right, #f9a8d4, #c084fc);
+  /*background: linear-gradient(to right, #f9a8d4, #c084fc);*/
+  background-color: aliceblues;
   color: white;
   font-weight: 600;
   padding: 0.6rem 1.2rem;

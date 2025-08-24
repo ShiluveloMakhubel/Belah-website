@@ -11,6 +11,7 @@ import ProductDetails from './pages/ProductDetails';
 import PostProduct from './components/PostProduct';
 import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
+import CheckOutPage from './pages/CheckoutPage'; // Import the CheckoutPage component
 // Import other pages here as needed
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
           <Route path="/postproduct" element={<PostProduct />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignupPage />} />
+          <Route path="/checkout" element={<CheckOutPage />} />
           {/* Add other routes here */}
         </Routes>
         <Footer />

@@ -11,7 +11,7 @@ const FeaturedProducts = () => {
         const data = await res.json();
 
         // Optional: Only show first 8 or add filtering logic if needed
-        setProducts(data.slice(0, 8)); // Limit to 8 for now
+        setProducts(data.slice(0, 4)); // Limit to 8 for now
       } catch (error) {
         console.error('Error fetching products:', error);
       }
@@ -28,8 +28,7 @@ const FeaturedProducts = () => {
           <div key={product.id} className="product-item">
             <img src={product.imageUrl} alt={product.name} />
             <h3>{product.name}</h3>
-            <p>{product.price}</p>
-            <button className="add-to-cart-btn">Add to Cart</button>
+            
           </div>
         ))}
       </div>

@@ -1,13 +1,16 @@
 import React from 'react';
 import './Deals.css';
+import { useNavigate } from 'react-router-dom';
 
 const dealsData = [
-  { id: 1, name: 'Special Weave Deal', price: 'R1,499', image: '/images/hair.jpeg' },
-  { id: 2, name: 'Discounted iPhone 11', price: 'R7,999', image: '/images/phone.jpeg' },
-  { id: 3, name: 'Stylish Sneakers Sale', price: 'R1,299', image: '/images/shoe.jpeg' },
+  { id: 1, name: 'IPhone 13', price: 'R5,499', image: '/images/iphone13.png' },
+  { id: 2, name: 'Discounted iPhone 11', price: 'R3,999', image: '/images/iphone11.png' },
+  { id: 3, name: 'Stylish iphone 16', price: 'R1,299', image: '/images/iphone16.png' },
 ];
 
+
 const Deals = () => {
+   const navigate = useNavigate();
   return (
     <div className="deals-page">
       <h2 className="deals-title">🎉 Hot Exclusive Deals Just for You! 🎉</h2>
@@ -19,7 +22,7 @@ const Deals = () => {
             <div className="deal-info">
               <h3>{deal.name}</h3>
               <p className="deal-price">{deal.price}</p>
-              <button className="shop-now">Shop Now</button>
+              <button className="shop-now" onClick={() => navigate('/products')} >Shop Now</button>
             </div>
           </div>
         ))}
